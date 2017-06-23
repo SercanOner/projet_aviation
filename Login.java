@@ -1,9 +1,16 @@
 package JPAClass;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Version;
 
+@Entity
 public class Login {
 	
+	
+	@Id @GeneratedValue
 	private Long id_Login;
 	private String login;
 	private String motDePasse;
@@ -13,6 +20,9 @@ public class Login {
 	@OneToOne(mappedBy="login")
 	private Client client;
 	
+	
+	@Version
+	private int version;
 	
 	
 	public Login() {
@@ -74,6 +84,18 @@ public class Login {
 
 	public void setClient(Client client) {
 		this.client = client;
+	}
+
+
+
+	public int getVersion() {
+		return version;
+	}
+
+
+
+	public void setVersion(int version) {
+		this.version = version;
 	}
 	
 	
