@@ -2,6 +2,7 @@ package JPAClass;
 
 public class Login {
 	
+	@Id @GeneratedValue
 	private long id_Login;
 	private String login;
 	private String motDePasse;
