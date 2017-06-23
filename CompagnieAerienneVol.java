@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Version;
 
 @Entity
 public class CompagnieAerienneVol {
@@ -14,6 +15,9 @@ public class CompagnieAerienneVol {
 	private Long id_CompagnieAerienneVol;
 	
 	private String numero;
+	
+	@Version
+	private int version;
 	
 	@ManyToOne
 	@JoinColumn(name="CompagnieAerienne_ID")
@@ -54,4 +58,26 @@ public class CompagnieAerienneVol {
 	public void setVol(Vol vol) {
 		this.vol = vol;
 	}
+
+
+	public Long getId_CompagnieAerienneVol() {
+		return id_CompagnieAerienneVol;
+	}
+
+
+	public void setId_CompagnieAerienneVol(Long id_CompagnieAerienneVol) {
+		this.id_CompagnieAerienneVol = id_CompagnieAerienneVol;
+	}
+
+
+	public int getVersion() {
+		return version;
+	}
+
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+	
+	
 }
