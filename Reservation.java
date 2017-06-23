@@ -129,6 +129,24 @@ public class Reservation {
 		public void setVersion(int version) {
 			this.version = version;
 		}
+
+
+
+
+
+		public Vol getVol() {
+			return vol;
+		}
+
+
+
+
+
+		public void setVol(Vol vol) {
+			this.vol = vol;
+		}
+		
+		
 		
 		
 		
