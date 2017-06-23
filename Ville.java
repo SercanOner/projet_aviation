@@ -6,10 +6,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Version;
 
+@Entity
 public class Ville {
 	
 	@ManyToOne
-	@JoinColumn(name="airport_id")
+	@JoinColumn(name="aeroport_id")
 	private Aeroport aeroport;
 	
 	@Id
