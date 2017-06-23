@@ -2,15 +2,48 @@ package JPAClass;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+
+@Entity
 public class Reservation {
 	
 		private long id_Reservation;
 		private Date date;
 		private int numero;
 		
+		@ManyToOne
+		@JoinColumn(name="id_Passager")
+		private Passager passager;
+		
+		
+		@ManyToOne
+		@JoinColumn(name="id_Client")
+		private Client client;
+		
+		
 		public Reservation(){
 			
 		}
+		
+		
+		
+		
+
+		public Reservation(long id_Reservation, Date date, int numero, Passager passager, Client client) {
+			super();
+			this.id_Reservation = id_Reservation;
+			this.date = date;
+			this.numero = numero;
+			this.passager = passager;
+			this.client = client;
+		}
+
+
+
+
 
 		public long getId_Reservation() {
 			return id_Reservation;
@@ -35,5 +68,40 @@ public class Reservation {
 		public void setNumero(int numero) {
 			this.numero = numero;
 		}
+
+
+
+
+
+		public Passager getPassager() {
+			return passager;
+		}
+
+
+
+
+
+		public void setPassager(Passager passager) {
+			this.passager = passager;
+		}
+
+
+
+
+
+		public Client getClient() {
+			return client;
+		}
+
+
+
+
+
+		public void setClient(Client client) {
+			this.client = client;
+		}
+		
+		
+		
 		
 }
