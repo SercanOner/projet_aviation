@@ -11,6 +11,7 @@ import javax.persistence.InheritanceType;
 @DiscriminatorColumn(name = "titre", discriminatorType = DiscriminatorType.STRING, length = 10)
 public class abstract Client {
 		
+		@Id @GeneratedValue
 		private long id_Client;
 		private String nom;
 		private int  numeroTel;
