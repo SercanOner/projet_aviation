@@ -5,13 +5,25 @@ import javax.persistence.Entity;
 
 @Entity
 @DiscriminatorValue("TitrePhysique")
-public class ClienPhysique extends Client{
+public class ClientPhysique extends Client{
 	private String prenom;
 	
-	public ClienPhysique()
+	public ClientPhysique()
 	{
 		super();
 	}
+	
+	
+	
+	
+	public ClientPhysique(String prenom) {
+		super();
+		this.prenom = prenom;
+	}
+
+
+
+
 	public String getPrenom() {
 		return prenom;
 	}
