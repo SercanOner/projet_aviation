@@ -1,6 +1,8 @@
 package JPAClass;
 
 public class Passager {
+	
+	@Id @GeneratedValue
 	private long id_Passager;
 	private String nom;
 	private String prenom;
