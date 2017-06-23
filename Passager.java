@@ -1,7 +1,7 @@
 package JPAClass;
 
 public class Passager {
-	private long id_Passager;
+	private Long id_Passager;
 	private String nom;
 	private String prenom;
 	
@@ -9,11 +9,11 @@ public class Passager {
 		
 	}
 
-	public long getId_Passager() {
+	public Long getId_Passager() {
 		return id_Passager;
 	}
 
-	public void setId_Passager(long id_Passager) {
+	public void setId_Passager(Long id_Passager) {
 		this.id_Passager = id_Passager;
 	}
 
