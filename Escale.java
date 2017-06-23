@@ -8,6 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Version;
 
+@Entity
 public class Escale {
 	@Id
 	@GeneratedValue
