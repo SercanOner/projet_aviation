@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+@Entity
 public class Vol {
 		
 	@Id
@@ -18,13 +20,15 @@ public class Vol {
 	private Date heureDepart;
 	private Date heureArrivee;
 	
-	@OneToMany(mappedBy="vols")
-	private List<Escale> escales=new ArrayList<>();
+	@OneToMany(mappedBy="compagnieAerienne")
+	private List<CompagnieAerienneVol> compagnieAerienneVol = new ArrayList<>();
 	
 	public Vol(){
 		
 	}
 
+	
+	
 	public long getId_Vol() {
 		return id_Vol;
 	}
@@ -64,15 +68,8 @@ public class Vol {
 	public void setHeureArrivee(Date heureArrivee) {
 		this.heureArrivee = heureArrivee;
 	}
-
-	public List<Escale> getEscales() {
-		return escales;
-	}
-
-	public void setEscales(List<Escale> escales) {
-		this.escales = escales;
-	}
 	
 	
 
 }
+
