@@ -9,8 +9,21 @@ public class ClientEI extends ClientMoral{
 
 	private String prenom;
 	
+	
+	
 	public ClientEI(){	
 	}
+
+	
+	
+	
+	public ClientEI(String prenom) {
+		super();
+		this.prenom = prenom;
+	}
+
+
+
 
 	public String getPrenom() {
 		return prenom;
