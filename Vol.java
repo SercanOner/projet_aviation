@@ -4,12 +4,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Version;
 
-@Entity
 public class Vol {
 		
 	@Id
@@ -19,16 +18,19 @@ public class Vol {
 	private Date dateArrivee;
 	private Date heureDepart;
 	private Date heureArrivee;
+
+	@OneToMany(mappedBy="vol")
+	List<Reservation>reservation=new ArrayList<>();
+	@Version
+	private int version;
 	
-	@OneToMany(mappedBy="compagnieAerienne")
-	private List<CompagnieAerienneVol> compagnieAerienneVol = new ArrayList<>();
+	@OneToMany(mappedBy="vols")
+	private List<Escale> escales=new ArrayList<>();
 	
 	public Vol(){
 		
 	}
 
-	
-	
 	public long getId_Vol() {
 		return id_Vol;
 	}
@@ -68,8 +70,27 @@ public class Vol {
 	public void setHeureArrivee(Date heureArrivee) {
 		this.heureArrivee = heureArrivee;
 	}
+
+	public List<Escale> getEscales() {
+		return escales;
+	}
+
+	public void setEscales(List<Escale> escales) {
+		this.escales = escales;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
+	public void setId_Vol(Long id_Vol) {
+		this.id_Vol = id_Vol;
+	}
 	
 	
 
 }
-
