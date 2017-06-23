@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Version;
 
 @Entity
 public class CompagnieAerienne {
@@ -15,6 +16,8 @@ public class CompagnieAerienne {
 	@GeneratedValue
 	private Long id_CompagnieAerienne;
 	private String nom;
+	@Version
+	private int version;
 	
 	@OneToMany(mappedBy="compagnieAerienne")
 	private List<CompagnieAerienneVol> compagnieAerienneVol = new ArrayList<>();
@@ -43,8 +46,13 @@ public class CompagnieAerienne {
 	public void setId_CompagnieAerienne(Long id_CompagnieAerienne) {
 		this.id_CompagnieAerienne = id_CompagnieAerienne;
 	}
+	public int getVersion() {
+		return version;
+	}
+	public void setVersion(int version) {
+		this.version = version;
+	}
 	
 	
 
 }
-
