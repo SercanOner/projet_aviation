@@ -4,6 +4,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Version;
 
 public class Ville {
 	
@@ -15,6 +16,9 @@ public class Ville {
 	@GeneratedValue
 	private long id_Ville;
 	private String nom;
+	
+	@Version
+	private int version;
 	
 	public Ville(){
 		
@@ -51,6 +55,16 @@ public class Ville {
 
 	public void setAeroport(Aeroport aeroport) {
 		this.aeroport = aeroport;
+	}
+
+
+	public int getVersion() {
+		return version;
+	}
+
+
+	public void setVersion(int version) {
+		this.version = version;
 	}
 	
 	
