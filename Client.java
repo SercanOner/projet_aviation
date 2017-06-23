@@ -11,7 +11,7 @@ import javax.persistence.InheritanceType;
 @DiscriminatorColumn(name = "titre", discriminatorType = DiscriminatorType.STRING, length = 10)
 public class abstract Client {
 		
-		private long id_Client;
+		private Long id_Client;
 		private String nom;
 		private int  numeroTel;
 		private int numeroFax;
@@ -21,10 +21,10 @@ public class abstract Client {
 		{
 			
 		}
-		public long getId_Client() {
+		public Long getId_Client() {
 			return id_Client;
 		}
-		public void setId_Client(long id_Client) {
+		public void setId_Client(Long id_Client) {
 			this.id_Client = id_Client;
 		}
 		public String getNom() {
