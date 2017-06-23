@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Reservation {
 	
-		private long id_Reservation;
+		private Long id_Reservation;
 		private Date date;
 		private int numero;
 		
@@ -12,11 +12,11 @@ public class Reservation {
 			
 		}
 
-		public long getId_Reservation() {
+		public Long getId_Reservation() {
 			return id_Reservation;
 		}
 
-		public void setId_Reservation(long id_Reservation) {
+		public void setId_Reservation(Long id_Reservation) {
 			this.id_Reservation = id_Reservation;
 		}
 
