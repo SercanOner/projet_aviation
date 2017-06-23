@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Reservation {
 	
+		@Id @GeneratedValue
 		private long id_Reservation;
 		private Date date;
 		private int numero;
